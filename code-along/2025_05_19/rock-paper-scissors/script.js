@@ -1,13 +1,20 @@
 function getComputerChoice() {
+    let result = "";
     let randomNumber = Math.floor(Math.random() * 3); // generates a random number, 0, 1 or 2.
     switch (randomNumber) {
         case 0:
-            return "rock";
+            result = "rock";
+            break;
         case 1:
-            return "paper";
+            result = "paper";
+            break;
         case 2:
-            return "scissors";
+            result = "scissors";
+            break;
     }
+
+    console.log(`The computer chose: ${result}`);
+    return result;
 }
 
 function getPlayerChoice() {
@@ -22,6 +29,7 @@ function getPlayerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
+
     if (playerSelection === computerSelection) {
         return "It's a tie!";
     } else if (
@@ -35,7 +43,7 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-console.log(getComputerChoice());
-console.log(getPlayerChoice());
+// console.log(getComputerChoice());
+// console.log(getPlayerChoice());
 
 console.log(playRound(getPlayerChoice(), getComputerChoice()));
