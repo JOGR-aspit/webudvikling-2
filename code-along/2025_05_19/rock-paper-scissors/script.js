@@ -1,3 +1,6 @@
+let playerScore = 0;
+let computerScore = 0;
+
 function getComputerChoice() {
     let result = "";
     let randomNumber = Math.floor(Math.random() * 3); // generates a random number, 0, 1 or 2.
@@ -37,13 +40,39 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection === "paper" && computerSelection === "rock") ||
         (playerSelection === "scissors" && computerSelection === "paper")
     ) {
+        ifPlayerWins();
         return "You win!";
     } else {
+        ifComputerWins();
         return "You lose!";
     }
+}
+
+function ifPlayerWins() {
+    playerScore++;
+
+    const playerScoreElement = document.querySelector("#player-score");
+    playerScoreElement.textContent = playerScore;
+}
+
+function ifComputerWins() {
+    computerScore++;
+
+    const computerScoreElement = document.querySelector("#computer-score");
+    computerScoreElement.textContent = computerScore;
 }
 
 // console.log(getComputerChoice());
 // console.log(getPlayerChoice());
 
-console.log(playRound(getPlayerChoice(), getComputerChoice()));
+document.querySelector("#rock").addEventListener("click", function () {
+    console.log(playRound("rock", getComputerChoice()));
+});
+document.querySelector("#paper").addEventListener("click", function () {
+    console.log(playRound("paper", getComputerChoice()));
+});
+document.querySelector("#scissors").addEventListener("click", function () {
+    console.log(playRound("scissors", getComputerChoice()));
+});
+
+// console.log(playRound(getPlayerChoice(), getComputerChoice()));
