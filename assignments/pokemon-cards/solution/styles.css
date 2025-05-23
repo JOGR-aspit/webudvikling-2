@@ -7,12 +7,77 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+}
+
+.pack-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    animation: packEntryAnimation 5s ease-in forwards;
+    z-index: 1;
 }
 
 .pack {
     width: 300px;
 }
 
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: cardEntryAnimation 2s ease-in forwards;
+}
+
 .card {
-    width: 280px;
+    position: absolute;
+    width: 290px;
+}
+
+.hidden {
+    opacity: 1;
+}
+
+@keyframes cardEntryAnimation {
+    from {
+        transform: translateX(100vw);
+    }
+    to {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes packEntryAnimation {
+    0% {
+        transform: translateX(100vw);
+    }
+    40% {
+        transform: translateX(0vw);
+    }
+    60% {
+        transform: translateX(0vw);
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
 }
