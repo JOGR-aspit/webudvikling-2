@@ -1,29 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
     font-family: "Segoe UI", "Arial", sans-serif;
     background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-    margin: 0;
-    padding: 0;
     min-height: 100vh;
 }
 .tabs {
     display: flex;
     justify-content: center;
-    margin-top: 48px;
+    margin-top: 64px;
     gap: 8px;
 }
 .tabs__tab {
     background: rgba(255, 255, 255, 0.7);
     border: none;
-    padding: 14px 38px;
-    margin: 0;
+    padding: 16px 48px;
     cursor: pointer;
-    font-size: 1.1rem;
+    font-size: 1rem;
     font-weight: 500;
     color: #333;
     transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     border-radius: 16px 16px 0 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-    letter-spacing: 0.5px;
 }
 .tabs__tab:hover {
     background: #fffbe7;
@@ -34,13 +36,12 @@ body {
     color: #e67e22;
     font-weight: bold;
     box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
-    z-index: 2;
 }
 .tabs__contents {
     max-width: 540px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.95);
-    border-radius: 0 0 16px 16px;
+    border-radius: 16px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     padding: 40px 0 36px 0;
     min-height: 200px;
@@ -55,15 +56,11 @@ body {
     opacity: 0;
     transform: translateX(100%);
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1), opacity 0.35s;
-    pointer-events: none;
-    box-sizing: border-box;
     padding: 20px 40px;
 }
 .tabs__content--active {
     opacity: 1;
     transform: translateX(0);
-    pointer-events: auto;
-    z-index: 1;
 }
 .tabs__content--slide-left {
     transform: translateX(-100%);
@@ -74,27 +71,12 @@ body {
     opacity: 0;
 }
 .tabs__title {
-    margin-top: 0;
     color: #e67e22;
     font-size: 1.5rem;
     letter-spacing: 1px;
 }
 .tabs__text {
     color: #444;
-    font-size: 1.08rem;
-    line-height: 1.7;
-    margin-bottom: 0;
-}
-@media (max-width: 600px) {
-    .tabs__contents {
-        padding: 24px 0 20px 0;
-        max-width: 98vw;
-    }
-    .tabs__content {
-        padding: 0 8px;
-    }
-    .tabs__tab {
-        padding: 10px 12px;
-        font-size: 1rem;
-    }
+    font-size: 1.1rem;
+    line-height: 1.5;
 }
