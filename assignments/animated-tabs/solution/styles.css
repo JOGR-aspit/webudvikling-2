@@ -1,80 +1,91 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
+    min-height: 100vh;
     font-family: "Segoe UI", "Arial", sans-serif;
     background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-    min-height: 100vh;
 }
+
 .tabs {
     display: flex;
     justify-content: center;
-    margin-top: 64px;
     gap: 8px;
+    margin-top: 64px;
 }
+
 .tabs__tab {
-    background: rgba(255, 255, 255, 0.7);
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     border: none;
+    border-radius: 16px 16px 0 0;
     padding: 16px 48px;
+    background: rgba(255, 255, 255, 0.7);
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
     color: #333;
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
-    border-radius: 16px 16px 0 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
 .tabs__tab:hover {
     background: #fffbe7;
     color: #e67e22;
 }
+
 .tabs__tab--active {
-    background: #fff;
-    color: #e67e22;
-    font-weight: bold;
     box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+    background: #fff;
+    font-weight: bold;
+    color: #e67e22;
 }
+
 .tabs__contents {
-    max-width: 540px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    padding: 40px 0 36px 0;
-    min-height: 200px;
     position: relative;
     overflow: hidden;
+    margin: 0 auto;
+    padding: 40px 0 36px 0;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border-radius: 16px;
+    max-width: 540px;
+    min-height: 200px;
+    background: rgba(255, 255, 255, 0.95);
 }
+
 .tabs__content {
     position: absolute;
-    width: 100%;
     top: 0;
     left: 0;
     opacity: 0;
     transform: translateX(100%);
     transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1), opacity 0.35s;
+    width: 100%;
     padding: 20px 40px;
 }
+
 .tabs__content--active {
     opacity: 1;
     transform: translateX(0);
 }
+
 .tabs__content--slide-left {
     transform: translateX(-100%);
     opacity: 0;
 }
+
 .tabs__content--slide-right {
     transform: translateX(100%);
     opacity: 0;
 }
+
 .tabs__title {
     color: #e67e22;
     font-size: 1.5rem;
     letter-spacing: 1px;
 }
+
 .tabs__text {
     color: #444;
     font-size: 1.1rem;
