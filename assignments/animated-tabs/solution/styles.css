@@ -18,7 +18,6 @@ body {
 }
 
 .tabs__tab {
-    transition: background 0.2s, color 0.2s, box-shadow 0.2s;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
     border: none;
     border-radius: 16px 16px 0 0;
