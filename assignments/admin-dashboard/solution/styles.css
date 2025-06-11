@@ -2,28 +2,143 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    color: #ccc;
+    font-family: "Roboto", sans-serif;
+    /* border: 1px solid white; */
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 16px;
+}
+
+h4 {
+    font-size: 14px;
+}
+
+h5 {
+    font-size: 12px;
+}
+
+h6 {
+    font-size: 10px;
+}
+
+p {
+    font-size: 10px;
 }
 
 .main-container {
     min-height: 100vh;
     display: grid;
-    grid-template: 1fr 4fr / 1fr 6fr;
+    grid-template: 1fr 8fr / 1fr 7fr;
     grid-template-areas:
         "sidebar header"
         "sidebar content";
 }
 
 .sidebar {
-    background-color: darkorange;
+    background-color: #ff7518;
     grid-area: sidebar;
+    padding: 16px;
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+}
+
+.sidebar-title {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-title h1 {
+    font-size: 18px;
+    color: #000;
+}
+
+.sidebar-menu-item {
+    display: flex;
+    align-items: center;
+    padding: 2px;
+    cursor: pointer;
+    margin-bottom: 8px;
+}
+
+.sidebar-menu-item h3 {
+    margin-left: 8px;
+    font-size: 12px;
+    color: #000;
 }
 
 .header {
-    background-color: darkslategray;
+    background-color: #1b1b1b;
     grid-area: header;
+    padding: 16px;
 }
 
 .content {
-    background-color: darkgrey;
+    background-color: #2f2f2f;
+}
+
+.content-container {
     grid-area: content;
+    display: grid;
+    grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "projects projects projects projects announcements announcements"
+        "projects projects projects projects announcements announcements"
+        "projects projects projects projects announcements announcements"
+        "projects projects projects projects trending trending"
+        "projects projects projects projects trending trending"
+        "projects projects projects projects trending trending";
+    gap: 8px;
+    padding: 16px;
+}
+
+.projects-container {
+    grid-area: projects;
+    padding-right: 16px;
+}
+
+.project-card-container {
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr;
+    gap: 8px;
+}
+
+.project-card {
+    background-color: #464545;
+    border-left: 4px solid #ff7518;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.announcements-container {
+    grid-area: announcements;
+}
+
+.announcement-card-container {
+    background-color: #464545;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trending-container {
+    grid-area: trending;
+}
+
+.trending-card-container {
+    background-color: #464545;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
