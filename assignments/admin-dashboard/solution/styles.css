@@ -86,7 +86,7 @@ p {
 .header-container {
     display: grid;
     grid-template: 1fr 1fr / 3fr 1fr;
-    padding: 0px 32px 16px 32px;
+    padding: 0px 32px;
     align-items: center;
 }
 
@@ -154,12 +154,12 @@ p {
     display: grid;
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr / 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
-        "projects projects projects projects announcements announcements"
-        "projects projects projects projects announcements announcements"
-        "projects projects projects projects announcements announcements"
-        "projects projects projects projects trending trending"
-        "projects projects projects projects trending trending"
-        "projects projects projects projects trending trending";
+        "projects projects projects projects projects side"
+        "projects projects projects projects projects side"
+        "projects projects projects projects projects side"
+        "projects projects projects projects projects side"
+        "projects projects projects projects projects side"
+        "projects projects projects projects projects side";
     gap: 8px;
     padding: 16px;
 }
@@ -172,7 +172,7 @@ p {
 .project-card-container {
     display: grid;
     grid-template: 1fr 1fr 1fr / 1fr 1fr;
-    gap: 8px;
+    gap: 16px;
     padding-top: 8px;
 }
 
@@ -212,11 +212,18 @@ p {
     list-style: none;
 }
 
-.announcements-container {
-    grid-area: announcements;
+.side-container {
+    grid-area: side;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    justify-content: space-between;
 }
 
 .announcement-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     background-color: #464545;
     border-radius: 8px;
     padding: 16px;
@@ -224,14 +231,30 @@ p {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.trending-container {
-    grid-area: trending;
+.announcement-card h5 {
+    font-size: 18px;
+    color: #ff7518;
+    font-weight: 700;
 }
 
 .trending-card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     background-color: #464545;
     border-radius: 8px;
     padding: 16px;
     margin-top: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.trending-card {
+    display: flex;
+    gap: 16px;
+}
+
+.trending-text {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
